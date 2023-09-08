@@ -125,5 +125,12 @@ internal enum TracerInstrumentation
     /// <summary>
     /// Azure SDK instrumentation.
     /// </summary>
-    Azure = 18
+    Azure = 18,
+
+#if NET6_0_OR_GREATER
+    /// <summary>
+    /// Ba instrumentation.
+    /// </summary>
+    Ba = 19,
+#endif
 }

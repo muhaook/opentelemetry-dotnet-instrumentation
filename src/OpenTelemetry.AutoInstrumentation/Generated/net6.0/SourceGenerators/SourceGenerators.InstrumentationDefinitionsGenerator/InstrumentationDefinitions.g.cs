@@ -19,11 +19,17 @@ internal static partial class InstrumentationDefinitions
 
     private static NativeCallTargetDefinition[] GetDefinitionsArray()
     {
-        var nativeCallTargetDefinitions = new List<NativeCallTargetDefinition>(17);
+        var nativeCallTargetDefinitions = new List<NativeCallTargetDefinition>(18);
         // Traces
         var tracerSettings = Instrumentation.TracerSettings.Value;
         if (tracerSettings.TracesEnabled)
         {
+            // Ba
+            if (tracerSettings.EnabledInstrumentations.Contains(TracerInstrumentation.Ba))
+            {
+                nativeCallTargetDefinitions.Add(new("Microsoft.AspNetCore", "Microsoft.AspNetCore.Builder.WebApplication", "Run", new[] {"System.Void", "System.String"}, 6, 0, 0, 7, 65535, 65535, AssemblyFullName, "OpenTelemetry.AutoInstrumentation.Instrumentations.Ba.BaIntegration"));
+            }
+
             // MongoDB
             if (tracerSettings.EnabledInstrumentations.Contains(TracerInstrumentation.MongoDB))
             {

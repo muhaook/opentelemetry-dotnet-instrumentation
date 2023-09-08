@@ -1,0 +1,3 @@
+OpenTelemetry.AutoInstrumentation.Instrumentations.Ba.BaIntegration
+OpenTelemetry.AutoInstrumentation.Instrumentations.Ba.BaIntegration.BaIntegration() -> void
+static OpenTelemetry.AutoInstrumentation.Instrumentations.Ba.BaIntegration.OnMethodBegin<TTarget, TArg1>(TTarget instance, TArg1 arg1) -> OpenTelemetry.AutoInstrumentation.CallTarget.CallTargetState
