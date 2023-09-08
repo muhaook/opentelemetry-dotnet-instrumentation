@@ -108,6 +108,11 @@ internal enum TracerInstrumentation
     /// <summary>
     /// ASP.NET Core instrumentation.
     /// </summary>
-    AspNetCore = 15
+    AspNetCore = 15,
+
+    /// <summary>
+    /// ASP.NET Core instrumentation.
+    /// </summary>
+    Ba = 16
 #endif
 }

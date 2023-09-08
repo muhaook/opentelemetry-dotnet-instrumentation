@@ -90,6 +90,8 @@ internal static class Instrumentation
             return;
         }
 
+        Logger.Information("===== Mike testing bytecode instrumentation ... ... right after commit df78d34cb99e9e0ab171ce241c7459cd70cc3a11 =====");
+
 #if NETFRAMEWORK
         try
         {
@@ -298,6 +300,8 @@ internal static class Instrumentation
 #if NET6_0_OR_GREATER
                 case TracerInstrumentation.AspNetCore:
                     DelayedInitialization.Traces.AddAspNetCore(lazyInstrumentationLoader, pluginManager);
+                    break;
+                case TracerInstrumentation.Ba:
                     break;
                 case TracerInstrumentation.MySqlData:
                     DelayedInitialization.Traces.AddMySqlClient(LazyInstrumentationLoader, pluginManager);

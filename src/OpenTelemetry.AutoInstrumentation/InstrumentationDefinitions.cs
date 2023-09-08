@@ -14,6 +14,8 @@
 // limitations under the License.
 // </copyright>
 
+using OpenTelemetry.AutoInstrumentation.Instrumentations;
+
 namespace OpenTelemetry.AutoInstrumentation;
 
 internal static partial class InstrumentationDefinitions
@@ -73,6 +75,21 @@ internal static partial class InstrumentationDefinitions
             new("StackExchangeRedis", "Trace", "StackExchange.Redis", "StackExchange.Redis.ConnectionMultiplexer", "ConnectImplAsync",  new[] { "System.Threading.Tasks.Task`1<StackExchange.Redis.ConnectionMultiplexer>", "System.Object", "System.IO.TextWriter" }, 2, 0, 0, 2, 65535, 65535, assemblyFullName, "OpenTelemetry.AutoInstrumentation.Instrumentations.StackExchangeRedis.StackExchangeRedisIntegrationAsync"),
             new("StackExchangeRedis", "Trace", "StackExchange.Redis", "StackExchange.Redis.ConnectionMultiplexer", "ConnectImplAsync",  new[] { "System.Threading.Tasks.Task`1<StackExchange.Redis.ConnectionMultiplexer>", "StackExchange.Redis.ConfigurationOptions", "System.IO.TextWriter" }, 2, 0, 0, 2, 65535, 65535, assemblyFullName, "OpenTelemetry.AutoInstrumentation.Instrumentations.StackExchangeRedis.StackExchangeRedisIntegrationAsync"),
             new("StackExchangeRedis", "Trace", "StackExchange.Redis", "StackExchange.Redis.ConnectionMultiplexer", "ConnectImplAsync",  new[] { "System.Threading.Tasks.Task`1<StackExchange.Redis.ConnectionMultiplexer>", "StackExchange.Redis.ConfigurationOptions", "System.IO.TextWriter", "System.Nullable`1[StackExchange.Redis.ServerType]" }, 2, 0, 0, 2, 65535, 65535, assemblyFullName, "OpenTelemetry.AutoInstrumentation.Instrumentations.StackExchangeRedis.StackExchangeRedisIntegrationAsync"),
+
+             /*
+                [InstrumentMethod(
+                assemblyName: "Microsoft.AspNetCore",
+                typeName: "Microsoft.AspNetCore.Builder.WebApplication",
+                methodName: "Run",
+                returnTypeName: "System.Void",
+                parameterTypeNames: new string[] { "System.String" },
+                minimumVersion: "6.0.0",
+                maximumVersion: "7.65535.65535",
+                integrationName: "Ba",
+                type: InstrumentationType.Trace)]
+             */
+
+            new("Ba", "Trace", "Microsoft.AspNetCore", "Microsoft.AspNetCore.Builder.WebApplication", "Run",  new[] { "System.Void", "System.String" }, 6, 0, 0, 7, 65535, 65535, assemblyFullName, "OpenTelemetry.AutoInstrumentation.Instrumentations.Ba.BaIntegration"),
         };
 
     // TODO: Generate this list using source generators
